@@ -1,8 +1,18 @@
 <?php
 
+use App\Models\Setting;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Install\InstallController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\backend\PageController;
+use App\Http\Controllers\frontend\WebController;
+use App\Http\Controllers\backend\AdminController;
+use App\Http\Controllers\backend\SettingController;
+use App\Http\Controllers\Install\InstallController;
+use App\Http\Controllers\backend\home\FeaturedController;
+use App\Http\Controllers\backend\Contact\Contactcontroller;
+use App\Http\Controllers\backend\job\JobePositionController;
+use App\Http\Controllers\backend\home\ClientReviewControlller;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,17 +29,62 @@ Route::middleware(['install'])->group(function () {
 
     Auth::routes(['register' => false]);
 
-    Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+    Route::get('/', [WebController::class, 'index'])->name('index');
+    Route::get('/about', [WebController::class, 'about'])->name('about');
+    Route::get('/case-study', [WebController::class, 'case_study'])->name('case_study');
+    Route::get('/case-study-view', [WebController::class, 'case_study_view'])->name('case_study_view');
+    Route::get('/how-we-work', [WebController::class, 'how_we_work'])->name('how_we_work');
+    Route::get('/project-base-solution', [WebController::class, 'project_base'])->name('project_base');
+    Route::get('/dedicated-team', [WebController::class, 'dedicated_team'])->name('dedicated_team');
+    Route::get('/contact', [WebController::class, 'contact'])->name('contact_us');
+    Route::post('contact-stor', [WebController::class, 'contact_stor'])->name('contact_stor');
+    Route::get('/career', [WebController::class, 'career'])->name('career');
+    Route::get('/basicInformation/{id}', [WebController::class, 'basicInformation'])->name('basicInformation');
+    Route::post('/apply-now', [WebController::class, 'apply_now'])->name('apply_now');
+    Route::get('/job-details/{id}', [WebController::class, 'job_details'])->name('job_details');
+    Route::get('/fileup', [WebController::class, 'fileup']);
+    Route::post('/upload-doc-file', [WebController::class, 'uploadToServer'])->name('file.store');
+
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
-
-    Route::middleware(['auth'])->group(function () {
-
-        Route::get('/dashboard', function(){
-            return view('dashboard');
-        });
-
+    Route::get('/sign-up', function () {
+        return view('backend.pages.sign-up');
     });
 
+
+    Route::group(['prefix' => 'admin'], function () {
+        Route::get('/login', 'App\Http\Controllers\Auth\LoginController@showLoginForm')->name('login');
+        Route::post('/login', 'App\Http\Controllers\Auth\LoginController@login')->name('login');
+    });
+
+    Route::middleware(['auth', 'active'])->group(function () {
+        Route::group(['prefix' => 'admin'], function () {
+            Route::get('home', [PageController::class, 'home'])->name('home');
+
+            Route::resource('client-review', ClientReviewControlller::class);
+            Route::resource('featured', FeaturedController::class);
+            Route::resource('admin', AdminController::class);
+            Route::resource('contact-us', Contactcontroller::class);
+            Route::get('/download/{image}', [Contactcontroller::class, 'download']);
+            Route::get('/chack', [Contactcontroller::class, 'chack']);
+
+            Route::resource('job-position', JobePositionController::class);
+
+            Route::any('general_settings', [SettingController::class, 'general'])->name('general_settings');
+            Route::post('general_settings', [SettingController::class, 'store_settings'])->name('general_settings');
+            Route::post('general_settings_phone', [SettingController::class, 'general_settings_phone'])->name('general_settings_phone');
+            Route::get('/dashboard', function () {
+                return view('backend.pages.dashboard');
+            });
+            // Route::get('/dashboard', function () {
+            //     $authorModel = Setting::where('name', '=', 'phone')->first();
+            //     return $authorModel->id;
+            // });
+
+
+
+            Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+        });
+    });
 });
 
 Route::get('/installation', [InstallController::class, 'index']);

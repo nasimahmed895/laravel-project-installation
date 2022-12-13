@@ -2,8 +2,8 @@
 
 @section('css-stylesheet')
     <style>
-
-        html, body {
+        html,
+        body {
             background-color: #fff;
             color: #636b6f;
             font-family: 'Nunito', sans-serif;
@@ -40,7 +40,7 @@
             font-size: 84px;
         }
 
-        .links > a {
+        .links>a {
             color: #636b6f;
             padding: 0 25px;
             font-size: 13px;
@@ -57,22 +57,22 @@
 @endsection
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
 
-            <div class="flex-center position-ref full-height">
-                <div class="content">
-                    <div class="title m-b-md">
-                        Welcome to HotSerial
+                <div class="flex-center position-ref full-height">
+                    <div class="content">
+                        <div class="title m-b-md">
+                            Welcome to
+                        </div>
+                        @if (Route::has('login'))
+                            <a href="{{ route('login') }}" class="btn btn-warning">Login Page</a>
+                        @endif
                     </div>
-                    @if (Route::has('login'))
-                        <a href="{{ route('login') }}" class="btn btn-warning">Login Page</a>
-                    @endif
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
-</div>
 @endsection

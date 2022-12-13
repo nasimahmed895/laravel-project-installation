@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('image', 255)->default('default/profile.png');
             $table->integer('status')->default(1);
+            $table->timestamp('last_seen')->nullable();
 
             $table->rememberToken();
             $table->timestamps();
