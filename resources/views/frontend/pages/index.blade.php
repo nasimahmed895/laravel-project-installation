@@ -1,6 +1,6 @@
 @extends('frontend.app')
 @section('container')
-    <div class="bg-video-wrap">
+    <div class="nav-top bg-video-wrap p-0 m-0">
         <video src="{{ asset('/public/frontend/video/video.mp4') }}" loop muted autoplay>
         </video>
         <div class="overlay">
@@ -26,7 +26,7 @@
                                         src="{{ asset('public/' . $featureds->image) }}" alt="">
                                     <div class="card-body p5">
                                         <p class="card-title">{{ $featureds->heading }}</p>
-                                        <p class="card-text text-justify px-3">{{ $featureds->text }}</p>
+                                        <p class="card-text px-3">{{ Str::limit($featureds->text, 135) }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -46,8 +46,9 @@
                 <div class="col-sm-8">
                     <div class="content ">
                         <h4>Mobile App Development</h4>
-                        <p class="">We are a mobile app development company expert in web development
-                            functional custom mobile apps for iOS, Android and Web.
+                        <p class="">We provide the best mobile app for the google play store & iOS applications as
+                            client
+                            requirement by using the latest technology.
                         </p>
                     </div>
                 </div>
@@ -62,33 +63,33 @@
                                     <div class="item"><img
                                             src="{{ asset('/public/frontend/Icon_Images/Mobile App Development/image_processing20200325-7690-1w93kuo.png') }}"
                                             alt="" srcset="">
-                                        <p>Native Android Apps</p>
+                                        <p>iOS App Development</p>
                                     </div>
                                     <div class="item"><img
                                             src="{{ asset('/public/frontend/Icon_Images/Mobile App Development/38653ca6395cdd6c637e657784e29099.jpg') }}"
                                             alt="" srcset="">
-                                        <p>Cross Platform</p>
+                                        <p>Android App Development</p>
                                     </div>
                                     <div class="item"><img
                                             src="{{ asset('/public/frontend/Icon_Images/Mobile App Development/51d0ee14fc61a0166c1367f7137f7cba.png') }}"
                                             alt="" srcset="">
-                                        <p>Hybrid Apps</p>
+                                        <p>Hybrid App Development</p>
                                     </div>
                                     <div class="item"><img
                                             src="{{ asset('/public/frontend/Icon_Images/Mobile App Development/image_processing20191227-21326-16l2knt.png') }}"
                                             alt="" srcset="">
-                                        <p>Progressive Web Apps</p>
+                                        <p>Food Delivery App</p>
                                     </div>
 
                                     <div class="item"><img
                                             src="{{ asset('/public/frontend/Icon_Images/Mobile App Development/image_processing20210611-4268-1n9pqf2.png') }}"
                                             alt="" srcset="">
-                                        <p>Sports Apps</p>
+                                        <p>Tracking App</p>
                                     </div>
                                     <div class="item"><img
                                             src="{{ asset('/public/frontend/Icon_Images/Mobile App Development/image_processing20210611-4268-1n9pqf2.png') }}"
                                             alt="" srcset="">
-                                        <p>E-commerce Apps</p>
+                                        <p>E-commerce App Development</p>
                                     </div>
                                 </div>
                             </div>
@@ -113,9 +114,8 @@
                 <div class="col-sm-8 ">
                     <div class="content  mt-5">
                         <h4>Web Development</h4>
-                        <p class="">Our web development team have exaperience with large and complex builds. Whether
-                            you
-                            want a web application or a custom app with RootDevs </p>
+                        <p class="">Our web development team has experience with large and complex
+                            projects. We are prepared to serve your business needs.</p>
                     </div>
                 </div>
             </div>
@@ -135,36 +135,37 @@
                                 <div class="border_wreaper2"></div>
                                 <div id="center2" class="wrapper2">
                                     <div class="item2"><img
+                                            src="{{ asset('/public/frontend/Icon_Images/Mobile App Development/image_processing20210611-4268-1n9pqf2.png') }}"
+                                            alt="" srcset="">
+                                        <p>E-commerce Apps</p>
+                                    </div>
+                                    <div class="item2"><img
                                             src="{{ asset('/public/frontend/Icon_Images/Mobile App Development/image_processing20200325-7690-1w93kuo.png') }}"
                                             alt="" srcset="">
-                                        <p>Native Android Apps</p>
+                                        <p>Web Design</p>
                                     </div>
                                     <div class="item2"><img
                                             src="{{ asset('/public/frontend/Icon_Images/Mobile App Development/38653ca6395cdd6c637e657784e29099.jpg') }}"
                                             alt="" srcset="">
-                                        <p>Cross Platform</p>
+                                        <p>Web Development</p>
                                     </div>
                                     <div class="item2"><img
                                             src="{{ asset('/public/frontend/Icon_Images/Mobile App Development/51d0ee14fc61a0166c1367f7137f7cba.png') }}"
                                             alt="" srcset="">
-                                        <p>Hybrid Apps</p>
+                                        <p>PHP Development</p>
                                     </div>
                                     <div class="item2"><img
                                             src="{{ asset('/public/frontend/Icon_Images/Mobile App Development/image_processing20191227-21326-16l2knt.png') }}"
                                             alt="" srcset="">
-                                        <p>Progressive Web Apps</p>
+                                        <p>Laravel Development</p>
                                     </div>
 
                                     <div class="item2"><img
                                             src="{{ asset('/public/frontend/Icon_Images/Mobile App Development/image_processing20210611-4268-1n9pqf2.png') }}"
                                             alt="" srcset="">
-                                        <p>Sports Apps</p>
+                                        <p>Web Portal's</p>
                                     </div>
-                                    <div class="item2"><img
-                                            src="{{ asset('/public/frontend/Icon_Images/Mobile App Development/image_processing20210611-4268-1n9pqf2.png') }}"
-                                            alt="" srcset="">
-                                        <p>E-commerce Apps</p>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -401,16 +402,19 @@
                     </div>
                 </div>
                 <div class="col-lg-6  d-flex align-items-center justify-content-center">
-                    <div class="client_info pl-5" style="margin-left: 5rem">
-                        <p class="text-justify">We grow on the trust of our clients.
-                            You bring us a problem, and we will give you a personalized solution. Because our
-                            first
-                            concern
-                            is understanding our client before we give a proposal.
-
-                            That is how we conduct ourselves because we understand that a business is built on
-                            our
-                            relationships with our customers.</p>
+                    <div class="client_info " style="margin-left: 5rem">
+                        <p class="text-justify">Root Devs always look for providing the best service with
+                            excellence. We deliver android apps, iOS apps & web solutions.
+                            Working hard and building innovative ideas is in our DNA,
+                            and we are here to provide you with exceptional well solutions
+                            as per your business needs, We are here to give a new face to
+                            your business through the power of IT solutions that include a
+                            wide range of web designing and development, mobile
+                            application development, and custom software development
+                            service. Our highly qualified software engineers & IT experts
+                            team assists you with effective and updated technology needs
+                            throughout the planning, designing, developing, and deployment
+                            stage.</p>
                     </div>
                 </div>
 

@@ -1,5 +1,5 @@
 @include('frontend.style')
-<div class="center_containt_loder">
+<div class="center_containt_loder " style="width: 100%; ">
     <div class="loder" id="loder">
         <div class="ring"></div>
         <div class="ring"></div>

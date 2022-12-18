@@ -7,9 +7,10 @@
             <h2 class="text-white text-center mb-1">Project-Based solutions Implementation
 
             </h2>
-            <h5 class="text-white ">Get enhanced customer satisfaction, with our Project-Based Engagement</h5>
+            <h5 class="text-white text-center">Get enhanced customer satisfaction, with our Project-Based Engagement</h5>
         </div>
     </div>
+
 
     <div class="container hire_dedicate_team mt-3">
         <div class="row py-5 ">
@@ -18,36 +19,38 @@
                     <h3 class="fbold">Advantage</h3>
                 </div>
             </div>
-            <div class="  col-md-7 content_center">
+            <div class="  col-md-7 ">
                 <ul class="f1rem md-f1rem f500 m-b ul-b-10px ">
-                    <li>Hassle-free hiring process and lower recruitment cost.</li>
-                    <li>Hassle-free hiring process and lower recruitment cost.</li>
-                    <li>Experienced offshore members at a comparatively low cost</li>
-                    <li>You can get experts working for you from any part of the world.</li>
-                    <li>You can connect with providers from all around the world.</li>
-                    <li>You can get experts working for you from any part of the world.</li>
-                    <li>You can connect with providers from all around the world.</li>
+                    <li>Delivering the project for a fixed cost.</li>
+                    <li>Anywhere in the world, you can hire professionals to work for you.</li>
+                    <li>You won't be required to handle any project responsibilities. From beginning to end,
+                    </li>
+                    <li>we will handle everything on your behalf.</li>
+                    <li>The cost will be made completely clear to you upfront, and the deadline will be set
+                        in advance.</li>
+                    <li>Efficient and affordable solution.</li>
+                    <li>To complete the project, no physical infrastructure is needed.</li>
+                    <li>Unless there are significant changes, the budget will remain unchanged.</li>
                 </ul>
             </div>
 
         </div>
     </div>
 
-    </div>
-    <div class="card_bg  hire_dedicate_team">
-        <div class="container">
+    <div class="card_bg">
+        <div class="container hire_dedicate_team mt-3">
             <div class="row py-5 ">
                 <div class="  col-md-5 d-flex align-items-center justify-content-center">
                     <div class="text-center ">
                         <h3 class="fbold">Who Will Help?</h3>
                     </div>
                 </div>
-                <div class="  col-md-7 content_center">
+                <div class="  col-md-7 ">
                     <ul class="f1rem f500 m-b ul-b-10px">
-                        <li>Who doesn't have the resources to hire offshore members.</li>
-                        <li>You can get experts working for you from any part of the world.</li>
-                        <li>Projects with a long-term goal.</li>
-                        <li>Complete monitoring power and authority over your team.</li>
+                        <li>Software firms, new businesses, startups, and agencies.</li>
+                        <li>Companies looking for specialized solutions for their business.</li>
+                        <li>Organizations looking to carry out a dedicated project.</li>
+                        <li>Organizations that don't have the necessary resources to complete a specified project.</li>
 
                     </ul>
                 </div>
@@ -76,11 +79,11 @@
                             <div class="client_info">
                                 <h4 class="mt-3 mb-4">Get customer satisfaction
                                 </h4>
-                                <p class="">The dedicated team entirely under your control. The team will
-                                    Manage the work schedule as per your requirements Hire your
-                                    dedicated team as long as you need Monitor daily work progress
-                                    Of each resource Make any changes anytime as required with
-                                    your dedicated team.</p>
+                                <p class="">We will offer effective solutions in accordance with your
+                                    requirements if you supply us with your ideas and deliverables.
+                                    Create software solutions based on the demands of your
+                                    business. The extent of potential future modifications. Receive
+                                    a timely, successful delivery. </p>
                             </div>
                         </div>
 
@@ -100,14 +103,11 @@
                     </div>
                 </div>
                 <div class="how_it_word col-md-7">
-                    <p class="f1rem f400 text-center text-md-start">
-                        With <span class="root">Root</span><span class="devs">Devs</span>, recruiting offshore teams is
-                        more
-                        flexible. With Our years Of
-                        experience,
-                        we've developed a process that will make every step Of your development journey, from
-                        hiring to getting the job done, a lot easier, faster, transparent, and efficient.
-
+                    <p class="f1rem f400 text-center text-md-start">Recruitment of dedicated teams is more flexible with
+                        <span class="root">Root</span><span class="devs">Devs</span>. Due to our years of
+                        experience, we have created a procedure that will make every step of your development
+                        journey from hiring to completing the task much simpler, quicker, transparent, and
+                        more effective.
                     </p>
                 </div>
             </div>

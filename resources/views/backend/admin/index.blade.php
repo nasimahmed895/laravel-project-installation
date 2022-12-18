@@ -14,35 +14,32 @@
     <!-- End Navbar -->
     <div class="row">
         <div class="col-12">
+
             <div class="card mb-4">
-                <div class="card-header pb-2">
-                    <h6 class="float-left" style="float: left">Authors table</h6>
-                    <a class="btn btn-primary btn-sm ajax-modal float-end" href="{{ route('admin.create') }}"
-                        data-title="{{ _lang('Add New') }}">
-                        <i class="fas fa-plus mr-1"></i>
-                        {{ _lang('Add New') }}
-                    </a>
-                </div>
+
                 <div class="card-body px-0 pt-0 pb-2">
-                    <div class="table-responsive table px-2">
-                        <table class="table align-items-center mb-0 data-table " id="data-table"
-                            style="width: 100% !important">
+                    <div class="  p-4">
+                        {{--  <h5 class="float-left mt-2">Our Clients </h5>  --}}
+                        <h6 class="float-left mt-2">Auth Table </h6>
+                        <a class="btn btn-primary mt-2 mb-0 btn-sm ajax-modal float-end" href="{{ route('admin.create') }}"
+                            data-title="{{ _lang('Add New') }}">
+                            <i class="fas fa-plus mr-1"></i>
+                            {{ _lang('Add New') }}
+                        </a>
+                        <table class="table align-items-center mb-0 mt-3 data-table  hover w-100" id="data-table">
                             <thead>
                                 <tr>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Author
+                                    <th>Author
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                    <th>
                                         Email</th>
 
-                                    <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th>
                                         activ</th>
-                                    <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th>
                                         Action</th>
                                 </tr>
                             </thead>
-
                         </table>
                     </div>
                 </div>
@@ -62,6 +59,9 @@
             var table = $('#data-table').DataTable({
                 processing: true,
                 serverSide: true,
+                paginate: false,
+                searching: false,
+                info: false,
                 ajax: "{{ route('admin.index') }}",
                 columns: [{
                         data: 'name',

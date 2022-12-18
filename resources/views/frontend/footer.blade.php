@@ -23,20 +23,21 @@
                         <span class="tbold">Get In Touch</span>
                     </div>
                     <a href="" class=""><img width="128px"
-                            src="{{ asset('/public/frontend/Icon_Images/Root Devs.png') }}" alt=""
+                            src="{{ asset('public/frontend/Icon_Images/Root Devs.png') }}" alt=""
                             srcset=""></a>
-                    <p class="mt-3">House no- 02, Road No- 05,<br>
-                        Block B, Dhaka Uddan, <br> Mohammadpur, Dhaka 1207</p>
+                    <p class="mt-3">{{ get_option('address') }}</p>
                     <div class="office_time mt-4">
-                        <p> <strong class="text-white f100">Open: </strong> Sunday to Thursday From <br>
-                            10 am to 7 pm. </p>
+                        <p> <strong class="text-white f100">Open: </strong> {{ get_option('open') }}</p>
                     </div>
                     <div class="office_time mt-4">
                         <ul class="p-0">
-                            <li><a class="text-white" href="tel:01794-780-707"><img
-                                        style="width: 25px ; margin-right: 5px; margin-left: 0"
-                                        src="public/frontend/Icon_Images/Root_icons/bangladesh.png" alt=""
-                                        sizes="" srcset=""> 01794-780707</a></li>
+                            @foreach (json_decode(get_option('phone')) as $phones)
+                                <li><a class="text-white" href="tel: {{ $phones->phone }}">
+                                        <img style="width: 25px ; margin-right: 5px; margin-left: 0"
+                                            src="{{ asset('public/' . $phones->image) }}" alt="" sizes=""
+                                            srcset=""> 01794-780707
+                                    </a></li>
+                            @endforeach
                         </ul>
                     </div>
 
@@ -46,7 +47,6 @@
                     <ul class="p-0">
                         <li><a href="{{ route('index') }}">Home</a></li>
                         <li><a href="{{ route('about') }}">About</a></li>
-                        <li><a href="{{ route('case_study') }}">Case Study</a></li>
                         <li><a href="{{ route('how_we_work') }}">How We Work</a></li>
                         <li><a href="{{ route('dedicated_team') }}">Our Team</a></li>
                         <li><a href="{{ route('contact_us') }}">Contact Us</a></li>

@@ -509,7 +509,8 @@ div.card_conatiner .card .card-title {
 }
 
 div.card_conatiner .card .card-text {
-    text-align: justify;
+    text-align: unset;
+
     font-size: 1rem;
     font-weight: 400;
     margin-bottom: 1rem;
@@ -517,6 +518,16 @@ div.card_conatiner .card .card-text {
     ;
     letter-spacing: 0;
 }
+
+/* card */
+.index div.card_conatiner .card {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+}
+
 
 .card_conatiner .slick-initialized .slick-slide {
     /* margin-right: 10px;
@@ -1339,7 +1350,7 @@ footer .icon {
 
 .about .slider p {
     font-size: 1rem;
-    /* font-weight: 400; */
+    font-weight: 400;
 }
 
 .about .slider, .casestudy .slider, .contact_us.slider, .basicinformation {
@@ -1876,8 +1887,8 @@ footer .icon {
 }
 
 .contact_us p {
-    font-size: 1rem;
-    font-weight: 100;
+    font-size: .9rem;
+    font-weight: 600;
     text-align: justify;
     margin-top: -5px;
     line-height: 1.5rem;
@@ -2264,6 +2275,88 @@ footer .icon {
     text-decoration: none;
 }
 
+#myProgress1 {
+    width: 100%;
+    border-radius: 5px;
+    height: 8px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    display: none;
+
+}
+
+#myBar1 {
+    width: 0%;
+    height: 8px;
+    background-color: #000040;
+    border-radius: 5px;
+    position: relative;
+
+}
+
+#progss1 {
+    position: absolute;
+    right: 0;
+    color: #F91E4E;
+}
+
+#file_name1 {
+    font-size: .8rem;
+    font-weight: 600;
+
+        {
+            {
+            -- margin-top: 10px;
+            --
+        }
+    }
+}
+
+#myProgress {
+    width: 100%;
+    border-radius: 5px;
+    height: 8px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    display: none;
+}
+
+#myBar {
+    width: 0%;
+    height: 8px;
+    background-color: #000040;
+    border-radius: 5px;
+    position: relative;
+}
+
+#progss {
+    position: absolute;
+    right: 0;
+    color: #F91E4E;
+}
+
+.upload_file {
+    /* position: relative; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+
+#file_name {
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+#submit_wreaper_prog {
+    padding-top: 23px;
+
+}
+
+.upload-btn-wrapper {
+    margin-left: 10px
+}
+
 /* form */
 /* contact_us */
 
@@ -2378,6 +2471,7 @@ footer .icon {
     font-weight: bolder;
     padding: 10px 20px 10px 20px;
 }
+
 
 .apply_btn {
     border-radius: 13px;
@@ -2734,14 +2828,6 @@ img.share_icon {
 
 /* jobdetails */
 
-
-/* card */
-.index div.card_conatiner .card {
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 
 

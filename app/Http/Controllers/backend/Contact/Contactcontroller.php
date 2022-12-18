@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\backend\Contact;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Models\ContactUs;
-use App\Models\contact;
 use DataTables;
+use App\Models\contact;
+use App\Models\ContactUs;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use App\Http\Controllers\Controller;
 
 class Contactcontroller extends Controller
 {
@@ -24,12 +25,22 @@ class Contactcontroller extends Controller
             return Datatables::of($contact)
                 ->addIndexColumn()
                 ->addColumn('file', function ($fils) {
-                    return '  <a href="' . url('admin/download',  $fils->image) . '" >
-                   <img src="' . asset('/public/backend/assets/img/file.png') . '" alt="" srcset=""  style="width: 25px">
+                    if ($fils->image != '') {
+                        return '<a href="' . url('root/download',  $fils->image) . '"  title="' . $fils->image . '" >
+                   <img src="' . asset('/public/backend/assets/img/file.png') . '" alt="" srcset=""  style="width: 20px">
                     </a>';
+                    } else {
+                        return  ' <a href="' . url('root/download',  $fils->image) . '" style="pointer-events: none" >
+                        <img src="' . asset('/public/backend/assets/img/file.png') . '" alt="" srcset=""  style="width: 20px">
+                         </a>';
+                    }
                 })
                 ->addColumn('link', function ($contact) {
-                    return '<a href="' .  $contact->link . '" target="_blank" rel="noopener noreferrer"><img src="' . asset('/public/backend/assets/img/open.png') . '" alt="" srcset="" style="width: 25px"></a>';
+                    if ($contact->link != '') {
+                        return '<a href="' .  $contact->link . '" target="_blank" rel=""  title="' . $contact->link . '" ><img src="' . asset('/public/backend/assets/img/open.png') . '" alt="" srcset="" style="width: 20px"></a>';
+                    } else {
+                        return  '<a href="' .  $contact->link . '" target="_blank" rel="noopener noreferrer" style="pointer-events: none" title="No link Provided"><img src="' . asset('/public/backend/assets/img/open.png') . '" alt="" srcset="" style="width: 20px"></a>';
+                    }
                 })
                 ->addColumn('action', function ($contact) {
                     $action = '<div class="dropdown text-center ">
@@ -144,6 +155,7 @@ class Contactcontroller extends Controller
 
         // return $image;
         $file_path = public_path('uploads/images/contact/' . $image);
+        // return Response::download($file_path);
         return response()->download($file_path);
     }
     public function chack()

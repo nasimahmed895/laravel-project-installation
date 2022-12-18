@@ -6,17 +6,16 @@
             <div class="bgclor px20">
                 <div class="container">
                     <h3 class="mb-3 f500">Who We Are ?</h3>
-                    <p class=" ff-Roboto f100"><span class="root">Root</span><span class="devs">Devs</span> is a
-                        Bangladeshi technology agency
-                        <br> that develop web,
-                        mobile, and
-                        computer
-                        software for its IT partner. <br> Here all the creative minds work together. So, whether it's a
-                        mobile
-                        app development, <br> web app or a custom solution unique to your business, <br> you can be sure
-                        your
-                        pro
-                        ject is being handled by experienced professionals from start to finish.<br>
+                    <p class=" ff-Roboto f100"><span class="root">Root</span><span class="devs">Devs</span> is here to give
+                        a new face to your business through IT solutions. <br>
+                        Here all the creative minds work together. We are ready to deliver maximum excellence to our
+                        clients. <br>
+                        We provide unique approach best service to ensure that our clients are getting best solution for
+                        their business needs. <br>
+                        Our professionals ensure that you will get an innovative solution that can grow your business. <br>
+                        So, when it comes to mobile app development, web development, and custom application solutions, <br>
+                        we can ensure that your project is being handled by experienced professionals from start to finish.
+                        <br>
                     </p>
                 </div>
 
@@ -112,15 +111,14 @@
                 </div>
                 <div class="col-lg-6  d-flex align-items-center justify-content-center">
                     <div class="client_info pl-5" style="margin-left: 5rem">
-                        <p class="text-justify">We grow on the trust of our clients.
-                            You bring us a problem, and we will give you a personalized solution. Because our
-                            first
-                            concern
-                            is understanding our client before we give a proposal.
-
-                            That is how we conduct ourselves because we understand that a business is built on
-                            our
-                            relationships with our customers.</p>
+                        <p class="text-justify">Root Devs always look for providing the best service with excellence. We
+                            deliver android apps, iOS apps & web solutions. Working hard and building innovative ideas is in
+                            our DNA, and we are here to provide you with exceptional well solutions as per your business
+                            needs, We are here to give a new face to your business through the power of IT solutions that
+                            include a wide range of web designing and development, mobile application development, and
+                            custom software development service. Our highly qualified software engineers & IT experts team
+                            assists you with effective and updated technology needs throughout the planning, designing,
+                            developing, and deployment stage.</p>
                     </div>
                 </div>
 
@@ -149,22 +147,20 @@
 
                             <div class="  col-lg-6">
                                 <div class="client_info">
-                                    <p>Our mission is simple:</p>
-                                    <h5 class="mb-3">Make the life of our clients easier And our team of creatives is
+                                    <p>Our mission is simple</p>
+                                    <h5 class="mb-3" style="font-size: 1.2rem;">Make the life of our clients easier And
+                                        our team of creatives is
                                         devoted to making
                                         that
                                         a
                                         reality.</h5>
-                                    <p>We grow on the trust of our clients. <br>
-
-                                        You bring us a problem, and we will give you a personalized solution. Because our
-                                        first
-                                        concern
-                                        is understanding our client before we give a proposal. <br>
-
-                                        That is how we conduct ourselves because we understand that a business is built on
-                                        our
-                                        relationships with our customers.</p>
+                                    <p>We grow on the trust of our clients.
+                                        You bring us a problem, and we will give you a
+                                        personalized solution. Because our first concern is
+                                        understanding our client before we give a proposal.
+                                        That is how we conduct ourselves because we
+                                        believe that a relationship is built on promises with
+                                        customers.</p>
                                 </div>
                             </div>
 

@@ -1,5 +1,91 @@
 @extends('frontend.app')
 @section('container')
+    <style>
+        #show-menu .share_button .fa-facebook-square {
+            background-image: url({{ asset('/public/frontend/Icon_Images/share/facebook.png') }});
+            width: 60px;
+            height: 60px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 60px 60px;
+            margin-left: -31px;
+            margin-top: 25px;
+        }
+
+        #show-menu .share_button .fa-facebook-square:before {
+            content: "\f082";
+            display: none
+        }
+
+        #show-menu .share_button .fa-linkedin {
+            background-image: url({{ asset('public/frontend/Icon_Images/share/linkedin.png') }});
+            width: 60px;
+            height: 60px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 60px 60px;
+            margin-left: -31px;
+            margin-top: 25px;
+        }
+
+        #show-menu .share_button .fa-linkedin:before {
+            content: "\f082";
+            display: none
+        }
+
+        #show-menu .share_button .fa-telegram {
+            background-image: url({{ asset('public/frontend/Icon_Images/share/telegram.png') }});
+            width: 60px;
+            height: 60px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 60px 60px;
+            margin-left: -31px;
+            margin-top: 25px;
+        }
+
+        #show-menu .share_button .fa-telegram:before {
+            content: "\f082";
+            display: none
+        }
+
+        #show-menu .share_button .fa-twitter {
+            background-image: url({{ asset('public/frontend/Icon_Images/share/twitter.png') }});
+            width: 60px;
+            height: 60px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 60px 60px;
+            margin-left: -31px;
+            margin-top: 25px;
+        }
+
+        #show-menu .share_button .fa-twitter:before {
+            content: "\f082";
+            display: none
+        }
+
+        #show-menu .share_button .fa-whatsapp {
+            background-image: url({{ asset('public/frontend/Icon_Images/share/whatsapp.png') }});
+            width: 60px;
+            height: 60px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 60px 60px;
+            margin-left: -31px;
+            margin-top: 25px;
+        }
+
+        #show-menu .share_button .fa-whatsapp:before {
+            content: "\f082";
+            display: none
+        }
+
+        #show-menu .share_button img {
+            height: 60px;
+            width: 60px;
+        }
+    </style>
     <div class="casestudy nav-top">
         <div class="slider  text-center position-relative"
             style="background-image:url({{ asset('/public/frontend/Icon_Images/JobDetails/abstract-digital-grid-black-background.jpg') }}); height: 325px;">
@@ -29,77 +115,79 @@
                                             alt="" srcset="">
                                     </div>
                                     <div class="share_button">
-                                        <a href="#"> <img
-                                                src="{{ asset('/public/frontend/Icon_Images/share/facebook.png') }}"
-                                                alt="" srcset=""></a>
-                                    </div>
-                                    <div class="share_button">
-                                        <img src="{{ asset('/public/frontend/Icon_Images/share/instagram.png') }}"
-                                            alt="" srcset="">
-                                    </div>
-                                    <div class="share_button">
-                                        <img src="{{ asset('/public/frontend/Icon_Images/share/linkedin.png') }}"
-                                            alt="" srcset="">
-                                    </div>
-                                    <div class="share_button">
-                                        <img src="{{ asset('/public/frontend/Icon_Images/share/messenger.png') }}"
-                                            alt="" srcset="">
-                                    </div>
-                                    <div class="share_button">
-                                        <img src="{{ asset('/public/frontend/Icon_Images/share/telegram.png') }}"
-                                            alt="" srcset="">
+                                        {!! Share::page('https://www.w3schools.com/cssref/css3_pr_background-size.php', $career->title)->facebook() !!}
                                     </div>
 
                                     <div class="share_button">
-                                        <img src="{{ asset('/public/frontend/Icon_Images/share/twitter.png') }}"
-                                            alt="" srcset="">
+                                        {{--  <img src="{{ asset('/public/frontend/Icon_Images/share/linkedin.png') }}"
+                                            alt="" srcset="">  --}}
+                                        {!! Share::page($current, $career->title)->linkedin() !!}
+                                    </div>
+
+                                    <div class="share_button">
+                                        {{--  <img src="{{ asset('/public/frontend/Icon_Images/share/telegram.png') }}"
+                                            alt="" srcset="">  --}}
+                                        {!! Share::page($current)->telegram() !!}
+                                    </div>
+
+                                    <div class="share_button">
+                                        {{--  <img src="{{ asset('/public/frontend/Icon_Images/share/twitter.png') }}"
+                                            alt="" srcset="">  --}}
+                                        {!! Share::page($current)->twitter() !!}
                                     </div>
                                     <div class="share_button">
-                                        <img src="{{ asset('/public/frontend/Icon_Images/share/whatsapp.png') }}"
-                                            alt="" srcset="">
+                                        {{--  <img src="{{ asset('/public/frontend/Icon_Images/share/whatsapp.png') }}"
+                                            alt="" srcset="">  --}}
+                                        {!! Share::page($current)->whatsapp() !!}
+
                                     </div>
-                                    <div class="share_button bg-black">
-                                        <span class=" text-white"><i class="fas fa-copy"></i></span>
-                                    </div>
+                                    <div class="share_button ">
+                                        <img onclick="myFunction()"
+                                            src="{{ asset('/public/frontend/Icon_Images/share/copy.png') }}" alt=""
+                                            srcset="">
+                                        <input type="text" value="qqqq" class="d-none" id="myInput">
+
                                 </label>
                             </div>
 
                         </div>
                     </div>
-                    <div class="col-3 p-0">
-                        <div class="" id="appy_button">
-                            <a href="{{ url('basicInformation', [$career->slug]) }}" class=" float-end"><img
-                                    style="width: 7rem"
-                                    src="{{ asset('/public/frontend/Icon_Images/Root_icons/apply.png') }}" alt=""
-                                    srcset=""></a>
-                        </div>
+                </div>
+                <div class="col-3 p-0">
+
+
+                    <div class="" id="appy_button">
+                        <a href="{{ url('basicInformation', [$career->slug]) }}" class=" float-end"><img
+                                style="width: 7rem" src="{{ asset('/public/frontend/Icon_Images/Root_icons/apply.png') }}"
+                                alt="" srcset=""></a>
                     </div>
                 </div>
+            </div>
 
+        </div>
+        <div class="details">
+            <h6><span class="root">Root</span><span class="Devs">Devs.</span> <span
+                    style="color: #a59898">{{ $career->address }}</span></h6>
+        </div>
+        <div class="row heading_bottom mb-5 mt-3 m-auto text-center text-md-start">
+            <div class=" col-6 col-md-3  border-bottom ">
+                <p>Experience</p>
+                <h5 class="m-0">{{ $career->experience }}</h5>
             </div>
-            <div class="details">
-                <h6><span class="root">Root</span><span class="Devs">Devs.</span> <span
-                        style="color: #a59898">{{ $career->address }}</span></h6>
+            <div class="col-6 col-md-3  border-bottom border-right-0">
+                <p>Work Level</p>
+                <h5 class="m-0">{{ $career->work_level }}</h5>
             </div>
-            <div class="row heading_bottom mb-5 mt-3 m-auto text-center text-md-start">
-                <div class=" col-6 col-md-3  border-bottom ">
-                    <p>Experience</p>
-                    <h5 class="m-0">{{ $career->experience }}</h5>
-                </div>
-                <div class="col-6 col-md-3  border-bottom border-right-0">
-                    <p>Work Level</p>
-                    <h5 class="m-0">{{ $career->work_level }}</h5>
-                </div>
-                <div class=" col-6 col-md-3  border-bottom ">
-                    <p>Employee Type</p>
-                    <h5 class="m-0">{{ $career->job_time }}</h5>
-                </div>
-                <div class=" col-6 col-md-3  border-bottom ">
-                    <p>Offer Salary</p>
-                    <h5 class="m-0">{{ $career->salary }}</h6>
-                </div>
+            <div class=" col-6 col-md-3  border-bottom ">
+                <p>Employee Type</p>
+                <h5 class="m-0">{{ $career->job_time }}</h5>
+            </div>
+            <div class=" col-6 col-md-3  border-bottom ">
+                <p>Offer Salary</p>
+                <h5 class="m-0">{{ $career->salary }}</h6>
             </div>
         </div>
+    </div>
     </div>
     <div class="card_bg">
         <div class="container ">
@@ -174,23 +262,4 @@
     </div>
 @endsection
 @section('javascript')
-    <script>
-        let appy_button = document.getElementById("appy_button");
-
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function() {
-            scrollFunction()
-        };
-
-        function scrollFunction() {
-            if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
-                appy_button.classList.add("button_scroll");
-            } else {
-                appy_button.classList.remove("button_scroll");
-
-            }
-        }
-
-        // When the user clicks on the button, scroll to the top of the document
-    </script>
 @endsection

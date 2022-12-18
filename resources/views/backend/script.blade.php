@@ -33,13 +33,13 @@
         loder.style.display = 'none ';
     }
     $('.dropify').dropify();
+
     @if (!Request::is('dashboard'))
         $(".page-title").text($(".card-title").first().text());
         $('title').append(' | ' + $(".card-title").first().text());
     @else
         $('title').append(' | '.$lang_dashboard);
     @endif
-    toast('success', '{{ session('success') }}');
 
     @if (Session::has('success'))
         toast('success', '{{ session('success') }}');

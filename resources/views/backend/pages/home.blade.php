@@ -40,14 +40,13 @@
                         <i class="fas fa-plus mr-1"></i>
                         {{ _lang('Add New') }}
                     </a>
-                    <table class="table align-items-center mb-0 data-table  hover w-100" id="data-table">
+                    <table class="table align-items-center mb-0 mt-3 data-table  hover w-100" id="data-table">
                         <thead>
                             <tr>
                                 <th>Image
                                 </th>
                                 <th>
                                     Heading</th>
-
                                 <th>
                                     Text</th>
                                 <th>
@@ -64,6 +63,7 @@
 @section('javascript')
 <script>
     $(document).ready(function() {
+
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -73,6 +73,11 @@
             responsive: true,
             processing: true,
             serverSide: true,
+            paginate: false,
+            searching: false,
+            info: false,
+            //pageLength: 1,
+
             ajax: "{{ route('featured.index') }}",
             columns: [{
                     data: 'image',

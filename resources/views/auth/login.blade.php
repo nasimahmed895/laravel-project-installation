@@ -4,11 +4,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('/public/backend/assets/img/apple-icon.png') }}">
-    <link rel="icon" type="image/png" href="{{ asset('/public/backend/assets/img/favicon.png') }}">
-    <title>
-        Argon Dashboard 2 by Creative Tim
-    </title>
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('public/uploads/images/' . get_option('icon')) }}">
+    <link rel="icon" type="image/png" href="{{ asset('public/uploads/images/' . get_option('icon')) }}">
+    <title>{{ get_option('company_name') . get_option('site_title') }}</title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <!-- Nucleo Icons -->
@@ -45,7 +43,7 @@
                                                 value="{{ old('email') }}" required autocomplete="email" autofocus>
                                             @error('email')
                                                 <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
+                                                    <strong>please enter a valid email</strong>
                                                 </span>
                                             @enderror
                                         </div>
@@ -56,7 +54,7 @@
                                                 autocomplete="current-password">
                                             @error('password')
                                                 <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
+                                                    <strong>please enter a valid password</strong>
                                                 </span>
                                             @enderror
                                         </div>
@@ -73,13 +71,12 @@
                         <div
                             class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">
                             <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden"
-                                style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signin-ill.jpg');
+                                style="background-image: url({{ asset('/public/backend/assets/img/login.jpg') }});
                                    background-size: cover;">
                                 <span class="mask bg-gradient-primary opacity-6"></span>
-                                <h4 class="mt-5 text-white font-weight-bolder position-relative">"Attention is the new
-                                    currency"</h4>
-                                <p class="text-white position-relative">The more effortless the writing looks, the more
-                                    effort the writer actually put into the process.</p>
+                                {{--  <h4 class="mt-5 text-white font-weight-bolder position-relative">""</h4>  --}}
+                                <p class="text-white position-relative">Root Devs is one of the very promising Software
+                                    Company in Bangladesh.</p>
                             </div>
                         </div>
                     </div>

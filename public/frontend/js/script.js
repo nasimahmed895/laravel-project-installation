@@ -143,32 +143,21 @@ $("button#navbar-down-icon, button#navbar-up-icon").on("click", function () {
         sohow_hide.addClass("d-none");
     }
 });
-// @ts-ignore
-// $('#datetimepicker3').datetimepicker({
-//     inline: true,
-//     step: 30,
-//     // hours12: true,
-//     // defaultSelect: false,
-//     showTimezone: true,
-//     scrollMonth: false,
-//     validateOnBlur: true,
-//     // scrollInput: true,
-//     scrollTime: true,
-//     format: 'unixtime',
-//     // format: 'Y/m/d H:i:A',
-//     // @ts-ignore
+let appy_button = document.getElementById("appy_button");
 
-//     onChangeDateTime: function (dp, $input) {
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () {
+    scrollFunction()
+};
 
-//         var meeting = $input.val();
-//         console.log(meeting);
-//     }
-// });
+function scrollFunction() {
+    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+        appy_button.classList.add("button_scroll");
+    } else {
+        appy_button.classList.remove("button_scroll");
 
-
-// console.log($('#datetimepicker3').datetimepicker('getValue'));
-
-
+    }
+}
 
 var htmlCollection = document.getElementsByClassName('item');
 //getting elements by class name into an HTMLCollection

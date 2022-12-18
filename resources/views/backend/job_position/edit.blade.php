@@ -1,7 +1,9 @@
 @extends('backend.app')
 @section('container')
-    <form class="" method="post" autocomplete="off" action="{{ route('job-post.store') }}" enctype="multipart/form-data">
+    <form class="" method="post" autocomplete="off" action="{{ route('job-post.update', $career->id) }}"
+        enctype="multipart/form-data">
         @csrf
+        @method('PUT')
         <div class="row">
             <div class="col-md-6">
                 <div class="card">
@@ -13,7 +15,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label class="control-label">{{ _lang('Title') }}</label>
-                                    <input type="text" class="form-control" name="title" value="{{ old('title') }}"
+                                    <input type="text" class="form-control" name="title" value="{{ $career->title }}"
                                         required>
                                 </div>
                             </div>
@@ -28,35 +30,37 @@
                                 <div class="form-group">
                                     <label class="control-label">{{ _lang('Location') }}</label>
                                     <input type="text" class="form-control" name="location"
-                                        value="{{ old('location') }} Dhaka, Bangladesh" required>
+                                        value="{{ $career->location }}" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">{{ _lang('Vacancy') }}</label>
-                                    <input type="text" class="form-control" name="vacancy" value="{{ old('vacancy') }}"
+                                    <input type="text" class="form-control" name="vacancy" value="{{ $career->vacancy }}"
                                         required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">{{ _lang('Date') }}</label>
-                                    <input type="date" class="form-control" name="date" required
-                                        value="{{ old('date') }}" id="">
+                                    <input type="date" class="form-control" name="date" required value=""
+                                        id="my-datepicker">
+
+
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">{{ _lang('Address') }}</label>
-                                    <input type="text" class="form-control" name="address" value="{{ old('address') }}"
-                                        required>
+                                    <input type="text" class="form-control" name="address"
+                                        value="{{ $career->address }}" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">{{ _lang('Experience') }}</label>
                                     <input type="text" class="form-control" name="experience"
-                                        value="{{ old('address') }} Minimun 1 Year" required>
+                                        value="{{ $career->experience }} " required>
                                 </div>
                             </div>
 
@@ -65,7 +69,7 @@
                                 <div class="form-group">
                                     <label class="control-label">{{ _lang('Work Level') }}</label>
                                     <select class="form-control select2" name="work_level"
-                                        data-selected="{{ old('work_level') }}" required>
+                                        data-selected="{{ $career->work_level }}" required>
                                         <option value="">{{ _lang('Select One') }}</option>
                                         <option value="senior management">{{ _lang('senior Level') }}</option>
                                         <option value="Middle management">{{ _lang('Middle management') }}</option>
@@ -81,7 +85,7 @@
                                 <div class="form-group">
                                     <label class="control-label">{{ _lang('Employee') }}</label>
                                     <select class="form-control select2" name="job_time"
-                                        data-selected="{{ old('job_time') }}" required>
+                                        data-selected="{{ $career->job_time }}" required>
                                         <option value="">{{ _lang('Select One') }}</option>
                                         <option selected value="Full Time Job">{{ _lang('Full Time Job') }}</option>
                                         <option value="part time job">{{ _lang('part time job') }}</option>
@@ -92,13 +96,14 @@
                                 <div class="form-group">
                                     <label class="control-label">{{ _lang('Offer Salary') }}</label>
                                     <input type="text" class="form-control" name="salary"
-                                        value="{{ old('salary') }}  BDT / Month" required>
+                                        value="{{ $career->salary }}  " required>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label class="control-label">{{ _lang('Status') }}</label>
-                                    <select class="form-control select2" name="status" required>
+                                    <select class="form-control select2" data-selected="{{ $career->status }}"
+                                        name="status" required>
                                         <option value="1">{{ _lang('Active') }}</option>
                                         <option value="0">{{ _lang('In-Active') }}</option>
                                     </select>
@@ -122,32 +127,34 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label class="control-label">Overview</label>
-                                    <textarea name="overview" id="" class="w-100" rows="5">{{ old('overview') }}</textarea>
+                                    <textarea name="overview" id="" class="w-100" rows="5">{{ $career->overview }}</textarea>
 
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label class="control-label">Educational Requirements</label>
-                                    <textarea name="requirements" id="" class="w-100" rows="5">{{ old('requirements') }}</textarea>
+                                    <textarea name="requirements" id="" class="w-100" rows="5">{{ $career->requirements }}</textarea>
 
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="row field_group my-2">
-                                    <div class="col-md-12">
-                                        <div class="form-group text-right">
-                                            <button class="btn btn-danger remove-row btn-sm text-white mt-1">-</button>
+                                    @foreach (json_decode($career->overview_list) as $overview_list)
+                                        <div class="col-md-12">
+                                            <div class="form-group text-right">
+                                                <button class="btn btn-danger remove-row btn-sm text-white mt-1">-</button>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label class="control-label">Job Requirements:</label>
-                                            <input type="text" class="form-control"
-                                                value="{{ old('overview_list[]') }}" name="overview_list[]"
-                                                value="" required="">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Job Requirements:</label>
+                                                <input type="text" class="form-control"
+                                                    value="{{ $overview_list->list }}" name="overview_list[]"
+                                                    value="" required="">
+                                            </div>
                                         </div>
-                                    </div>
+                                    @endforeach
 
                                 </div>
                             </div>
@@ -181,7 +188,6 @@
                 </div>
                 <div class="col-md-12">
                     <div class="form-group">
-                        {{--  <label class="control-label">list</label>  --}}
                         <input type="text" class="form-control" value="{{ old('overview_list[]') }}"
                             name="overview_list[]" required="">
                     </div>
@@ -193,6 +199,16 @@
 @endsection
 @section('javascript')
     <script type="text/javascript">
+        $(document).ready(function() {
+            // $timevalue = $('#my-date').val();
+            // $date = date_create();
+            // date_timestamp_set($date, 1671062400);
+            // $new = date_format($date, "U = Y-m-d H:i:s")
+            // console.log($new);
+            // document.getElementById('my-datepicker').valueAsDate = new Date($time);
+            //  $('#my-datepicker').datepicker('setDate', 'now');
+        });
+
         $(document).on('click', '.add-more', function() {
             var form = $('.repeat').clone().removeClass('repeat');
             form.find('.image').dropify();

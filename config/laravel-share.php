@@ -40,6 +40,10 @@ return [
             'uri' => 'https://telegram.me/share/url',
             'text' => 'Default share text',
         ],
+        // 'instagram' => [
+        //     'uri' => 'https://instagram.me/share/url',
+        //     'text' => 'Default share text',
+        // ],
     ],
 
     /*

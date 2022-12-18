@@ -12,7 +12,7 @@ class Career extends Model
 
     public function getDateTimeAttribute()
     {
-        $date = \Carbon\Carbon::createFromTimestamp($this->date)->format('d F Y');
+        $date = \Carbon\Carbon::createFromTimestamp($this->date)->format('m/d/y');
         return $date;
     }
 }

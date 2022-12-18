@@ -11,6 +11,7 @@
             <h5 class="text-white text-center mt-3">Our dedicated team will be your lifetime supporting role!</h5>
         </div>
     </div>
+
     <div class="container hire_dedicate_team mt-3">
         <div class="row py-5 ">
             <div class="  col-md-5 d-flex align-items-center justify-content-center">
@@ -18,43 +19,39 @@
                     <h3 class="fbold">Advantage</h3>
                 </div>
             </div>
-            <div class="  col-md-7 content_center">
+            <div class="  col-md-7 ">
                 <ul class="f1rem md-f1rem f500 m-b ul-b-10px ">
-                    <li>Hassle-free hiring process and lower recruitment cost.</li>
-                    <li>Hassle-free hiring process and lower recruitment cost.</li>
-                    <li>Experienced offshore members at a comparatively low cost</li>
-                    <li>You can get experts working for you from any part of the world.</li>
-                    <li>You can connect with providers from all around the world.</li>
-                    <li>You can get experts working for you from any part of the world.</li>
-                    <li>You can connect with providers from all around the world.</li>
+                    <li>Connect with service providers from all over the world..</li>
+                    <li>You won't need any formal offices or infrastructure.</li>
+                    <li>Reduced recruitment costs and a trouble-free hiring procedure.</li>
+                    <li>Anywhere in the world, you can hire specialists to work for you.</li>
+                    <li>Total control and authority over your staff in terms of monitoring.</li>
+                    <li>Experienced dedicated team for a reasonable price</li>
                 </ul>
             </div>
 
         </div>
     </div>
-
-    <div class=" hire_dedicate_team card_bg">
-
-        <div class="container">
+    <div class="card_bg">
+        <div class="container hire_dedicate_team mt-3">
             <div class="row py-5 ">
                 <div class="  col-md-5 d-flex align-items-center justify-content-center">
                     <div class="text-center ">
                         <h3 class="fbold">Who Will Help?</h3>
                     </div>
                 </div>
-                <div class="  col-md-7 content_center">
+                <div class="  col-md-7 ">
                     <ul class="f1rem f500 m-b ul-b-10px">
-                        <li>Who doesn't have the resources to hire offshore members.</li>
-                        <li>You can get experts working for you from any part of the world.</li>
-                        <li>Projects with a long-term goal.</li>
-                        <li>Complete monitoring power and authority over your team.</li>
+                        <li>Organizations that looking to hire professional team members at a reasonable price.</li>
+                        <li>Projects with a long-term target.</li>
+                        <li>Who has no idea about hiring dedicated team members.</li>
+                        <li>Organizations looking to hire dedicated team members temporarily.</li>
 
                     </ul>
                 </div>
 
             </div>
         </div>
-
     </div>
 
     <div class="container about">
@@ -74,11 +71,11 @@
                         <div class="  col-lg-6">
                             <div class="client_info">
                                 <h4 class="mt-3 mb-4">Get Complete Authority</h4>
-                                <p class="">The dedicated team entirely under your control. The team will
-                                    Manage the work schedule as per your requirements Hire your
-                                    dedicated team as long as you need Monitor daily work progress
-                                    Of each resource Make any changes anytime as required with
-                                    your dedicated team.</p>
+                                <p class="">The dedicated team is entirely under your control. The team will
+                                    handle the work schedule in accordance with your needs. Hire
+                                    your dedicated team for as long as you require, and keep track of
+                                    each resource's daily job progress. Change anything whenever
+                                    you need to with your dedicated team.</p>
                             </div>
                         </div>
 
@@ -98,14 +95,13 @@
                     </div>
                 </div>
                 <div class="how_it_word col-md-7">
-                    <p class="f1rem f400 text-center text-md-start">
-                        With <span class="root">Root</span><span class="devs">Devs</span>, recruiting offshore teams is
-                        more
-                        flexible. With Our years Of
-                        experience,
-                        we've developed a process that will make every step Of your development journey, from
-                        hiring to getting the job done, a lot easier, faster, transparent, and efficient.
 
+                    <p class="f1rem f400 text-center text-md-start">
+                        Recruitment of dedicated teams is more flexible with <span class="root">Root</span><span
+                            class="devs">Devs</span>. Due to our years of
+                        experience, we have created a procedure that will make every step of your development
+                        journey from hiring to completing the task much simpler, quicker, transparent, and
+                        more effective.
                     </p>
                 </div>
             </div>

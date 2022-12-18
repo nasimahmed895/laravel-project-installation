@@ -4,11 +4,8 @@
         <div class="container">
             <section class="pt-5 text-center heading ">
                 <h3 class="my-4">Engagement Models</h3>
-                <p class="mb-5 mt-5 ">Business Settings will help you to set up your business as you wish. You will get lots
-                    Of
-                    configuration
-                    to <br>
-                    make your business unique.</p>
+                <p class="mb-5 mt-5 ">We provide a distinctive method of service delivery. <br>
+                    This has supported us in two ways with our engagement models...</p>
             </section>
             <section>
                 <div class="row pb-5">
@@ -20,9 +17,11 @@
                             <div class="card-body p-4">
                                 <h5 class="card-title">Hired Dedicated Team</h5>
                                 <ul>
-                                    <li>Keep your team as long as you need</li>
-                                    <li>Make any changes anytime.</li>
-                                    <li>Make any changes anytime as required.</li>
+                                    <li>Manage your team's work schedule.</li>
+                                    <li>Keep your hired team for as long as
+                                        necessary.</li>
+                                    <li>Make any necessary changes at any
+                                        period.</li>
                                 </ul>
                             </div>
                             <a class="btn text-white " href="{{ route('dedicated_team') }}">Explore </a>
@@ -37,9 +36,10 @@
                             <div class="card-body p-4">
                                 <h5 class="card-title">Project Based</h5>
                                 <ul>
-                                    <li>Scope of making additional changes</li>
-                                    <li>Make any changes anytime.</li>
-                                    <li>Make any changes anytime as required.</li>
+                                    <li>Opportunity to make additional changes.</li>
+                                    <li>Produce your ideas</li>
+                                    <li>Make software solutions that are suited
+                                        to your company's needs.</li>
                                 </ul>
                             </div>
                             <a class="btn text-white" href="{{ route('project_base') }}"> Explore</a>

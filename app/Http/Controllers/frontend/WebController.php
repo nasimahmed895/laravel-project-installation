@@ -3,23 +3,30 @@
 namespace App\Http\Controllers\frontend;
 
 
+use Share;
+use Validator;
 use App\Models\Career;
 use App\Models\Client;
 use App\Models\Featured;
 use App\Models\Applicant;
 use App\Models\ContactUs;
-use Illuminate\Http\Request;
-use Validator;
 
+use Illuminate\Http\Request;
 use function Termwind\render;
+use Illuminate\Support\Facades\URL;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Cache;
 
 class WebController extends Controller
 {
     public function index()
     {
-        $featured = Featured::all();
-        $client = Client::all();
+        $featured = Cache::rememberForever('featured', function () {
+            return Featured::all();
+        });
+        $client = Cache::rememberForever('client', function () {
+            return   Client::all();
+        });
         return view('frontend.pages.index', compact('featured', 'client'));
     }
 
@@ -58,11 +65,13 @@ class WebController extends Controller
     }
     public function job_details(request $request, $id)
     {
+        $current = URL::current();
         $career = Career::where("slug", '=', $id)->first();
-        return view('frontend.pages.job_details', compact('career'));
+        return view('frontend.pages.job_details', compact('career', 'current'));
     }
     public function basicInformation(request $request, $id)
     {
+
         $career = Career::where("slug", '=', $id)->first();
         return view('frontend.pages.basicInformation', compact('id'));
     }
@@ -120,7 +129,7 @@ class WebController extends Controller
         $contactUs->meeting = $request->meeting;
         if ($request->file('image')) {
             $file = $request->file('image');
-            $filename = time() . '.' .  $file->getClientOriginalName();
+            $filename = rand() .  $file->getClientOriginalName();
             $file->move(public_path('uploads/images/contact'), $filename);
             $contactUs->image =  $filename;
         }

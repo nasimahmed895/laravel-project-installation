@@ -43,10 +43,12 @@
 }
 
 .share_button.main {
-    width: 30px;
-    height: 30px;
+    width: 55px;
+    height: 55px;
+    margin-top: -13px;
     border: none;
-    margin-left: 50px;
+    margin-left: 35px;
+    border: none;
     font-size: 15px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -137,34 +139,38 @@ input#toggle:checked~#show-menu .share_button:nth-child(2) {
 }
 
 input#toggle:checked~#show-menu .share_button:nth-child(3) {
-    top: -60px;
+    top: -40px;
     left: 70px;
     opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
 input#toggle:checked~#show-menu .share_button:nth-child(4) {
-    left: 100px;
-    opacity: 1;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-}
-
-input#toggle:checked~#show-menu .share_button:nth-child(5) {
-    top: 100px;
-    left: 80px;
-    opacity: 1;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-}
-
-input#toggle:checked~#show-menu .share_button:nth-child(6) {
     top: 120px;
     opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
+input#toggle:checked~#show-menu .share_button:nth-child(5) {
+
+    top: 50px;
+    left: 80px;
+
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+input#toggle:checked~#show-menu .share_button:nth-child(6) {
+    top: -40px;
+    left: -120px;
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
 input#toggle:checked~#show-menu .share_button:nth-child(7) {
-    top: 90px;
-    left: -80px;
+    top: 60px;
+    left: -100px;
+    opacity: 1;
     opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }

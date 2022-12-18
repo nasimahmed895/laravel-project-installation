@@ -16,7 +16,8 @@ class ClientReviewControlller extends Controller
      */
     public function index(request $request)
     {
-        $client = Client::latest()->get();
+        // dd($request->path());
+        $client = Client::all();
 
         if ($request->ajax()) {
             return Datatables::of($client)
@@ -81,8 +82,8 @@ class ClientReviewControlller extends Controller
         $validator = \Validator::make($request->all(), [
 
             'name' => 'required|string',
-            'designation' => 'required|string|max:230',
-            'text' => 'required|string|max:230',
+            'designation' => 'required|string',
+            'text' => 'required|string',
             'image' => 'required',
 
 
@@ -155,8 +156,8 @@ class ClientReviewControlller extends Controller
         $validator = \Validator::make($request->all(), [
 
             'name' => 'required|string',
-            'designation' => 'required|string|max:230',
-            'text' => 'required|string|max:230',
+            'designation' => 'required|string',
+            'text' => 'required|string',
             // 'image' => 'required',
 
 

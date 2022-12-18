@@ -69,8 +69,8 @@ class SettingController extends Controller
         $validator = \Validator::make($request->all(), [
             'phone' => 'required',
             'phone.*' => 'required',
-            // 'image' => 'required',
-            // 'image.*' => 'required',
+            'image' => 'required',
+            'image.*' => 'required',
 
         ]);
 

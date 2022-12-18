@@ -1,84 +1,6 @@
 @extends('frontend.app')
 
 @section('container')
-    <style>
-        #myProgress1 {
-            width: 100%;
-            border-radius: 5px;
-            height: 8px;
-            margin-right: 10px;
-            margin-bottom: 5px;
-            display: none;
-
-        }
-
-        #myBar1 {
-            width: 0%;
-            height: 8px;
-            background-color: #000040;
-            border-radius: 5px;
-            position: relative;
-
-        }
-
-        #progss1 {
-            position: absolute;
-            right: 0;
-            color: #F91E4E;
-        }
-
-        #file_name1 {
-            font-size: .8rem;
-            font-weight: 600;
-            {{--  margin-top: 10px;  --}}
-        }
-
-        #myProgress {
-            width: 100%;
-            border-radius: 5px;
-            height: 8px;
-            margin-right: 10px;
-            margin-bottom: 5px;
-            display: none;
-        }
-
-        #myBar {
-            width: 0%;
-            height: 8px;
-            background-color: #000040;
-            border-radius: 5px;
-            position: relative;
-        }
-
-        #progss {
-            position: absolute;
-            right: 0;
-            color: #F91E4E;
-        }
-
-        .upload_file {
-            /* position: relative; */
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            width: 100%;
-        }
-
-        #file_name {
-            font-size: .8rem;
-            font-weight: 600;
-            {{--  margin-top: 10px;  --}}
-        }
-
-        #submit_wreaper_prog {
-            padding-top: 23px;
-            {{--  width: 50%;  --}}
-        }
-
-        .upload-btn-wrapper {
-            margin-left: 10px
-        }
-    </style>
     <div class="slider contact_us nav-top text-center"
         style="background-image:url({{ asset('/public/frontend/Icon_Images/ezgif.com-gif-maker.jpg') }})">
         <div class=" bgclor  " style="padding-top: 100px; padding-bottom: 100px;">
@@ -130,17 +52,18 @@
                                                 </li>
                                             </ul>
 
-                                            <p class="card-text">In the First Step, We gather and identifies
-                                                the current problem, after we analysis
-                                                requirements and customer expectations.
+                                            <p class="card-text">Simply, set a time when you are
+                                                willing to talk. The manager will arrive
+                                                right on schedule and meet you there.
                                             </p>
-                                            <p class="card-text">In this design phase of work, the team
-                                                makes design decisions regarding the
-                                                architecture & make of the solution.
+                                            <p class="card-text">Let's freely discuss the project's requirements,
+                                                budget, functionality, and anything else you
+                                                feel is important and right when you're
+                                                both there.
                                             </p>
-                                            <p class="card-text">Now as you define the end result of your
-                                                project, let's get the team to deliver it
-                                                meeting all requirements in every way.
+                                            <p class="card-text">After you've defined the project's final result,
+                                                let's get the team to deliver it meeting all
+                                                requirements in every way.
 
                                             </p>
 
@@ -223,7 +146,7 @@
                                                                 <span class="input-group-text" id="addon-wrapping"><img
                                                                         src="{{ asset('/public/frontend/Icon_Images/Root_icons/send.png') }}"
                                                                         alt="" srcset=""></span>
-                                                                <textarea class="form-control mmessage" name="message" rows="4" placeholder="Your Message" required>{{ old('message') }}</textarea>
+                                                                <textarea class="form-control mmessage" name="message" rows="4" placeholder="Your Message*" required>{{ old('message') }}</textarea>
                                                                 <div class="invalid-tooltip ">
                                                                     Enter Your Valid Message
                                                                 </div>
@@ -311,7 +234,7 @@
                                                                 <input type="email" name="email"
                                                                     value="{{ old('email') }}" required
                                                                     class="form-control" placeholder="Your Mail*" />
-                                                                <div class="invalid-tooltip">
+                                                                <div class="invalid-tooltip" id="email">
                                                                     Enter Your Valid Email
                                                                 </div>
                                                             </div>
@@ -336,8 +259,8 @@
                                                                 <span class="input-group-text" id="addon-wrapping"><img
                                                                         src="{{ asset('/public/frontend/Icon_Images/Root_icons/send.png') }}"
                                                                         alt="" srcset=""></span>
-                                                                <textarea class="form-control" name="message" rows="4" placeholder="Your Message" required>{{ old('message') }}</textarea>
-                                                                <div class="invalid-tooltip">
+                                                                <textarea class="form-control" name="message" rows="4" placeholder="Your Message*" required>{{ old('message') }}</textarea>
+                                                                <div class="invalid-tooltip ">
                                                                     Enter Your Valid Message
                                                                 </div>
                                                             </div>
@@ -369,6 +292,9 @@
                                                                         <input type="file" onchange="progress(this)"
                                                                             name="image" class="file-input "
                                                                             accept=".xlsx,.xls,.doc, .docx,.ppt, .pptx,.txt,.pdf" />
+                                                                    </div>
+                                                                    <div class="file_upload_error" id="file_error">
+                                                                        Enter Your Valid File Format
                                                                     </div>
                                                                 </div>
 
@@ -435,14 +361,12 @@
                                     window.location.replace(response.redirect)
                                 }, 1000);
                             }
-                            // return true;
                         } else {
                             console.log(response)
                         }
                     },
                     error: function(response) {
                         console.log(response);
-                        //$('#file-input-error').text(response.responseJSON.message);
                     }
                 });
             }
@@ -454,7 +378,6 @@
         $('#datetimepicker3').datetimepicker({
             inline: true,
             step: 30,
-            // hours12: true,
             defaultSelect: false,
             showTimezone: true,
             scrollMonth: false,
@@ -462,20 +385,7 @@
             nextButton: true,
 
             minDate: 0,
-            //scrollTime: true,
-            //scrollInput: true,
-
-            //format: 'unixtime',
             format: 'Y/m/d H:i:A',
-            // @ts-ignore
-            //allowTimes: [
-            // '10:00 AM',
-            // '10:30 AM',
-            // '09:00 AM',
-            // '11:00 AM',
-            // '12:00 PM',
-            // '21:00 PM'
-            //],
             onChangeDateTime: function(dp, $input) {
                 meeting = $input.val();
                 document.getElementById("meeting").value = meeting;
@@ -537,11 +447,7 @@
 
         (function() {
             'use strict'
-
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
             var forms = document.querySelectorAll('.needs-validation')
-
-            // Loop over them and prevent submission
             Array.prototype.slice.call(forms)
                 .forEach(function(form) {
                     form.addEventListener('submit', function(event) {
@@ -560,7 +466,6 @@
                 if (this.value.match(regEx)) {
                     $('#submit_now').removeAttr('disabled', 'disabled');
                     $('.screenNameError').css("display", "none");
-                    // $('.screenNameError').addClass('d-none');
 
                 } else {
                     $('#submit_now').attr('disabled', 'disabled');
@@ -570,45 +475,43 @@
 
                 }
             });
+            $("[name=email]").keyup(function() {
+                var email_valid = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                if (this.value.match(email_valid)) {
+                    email = true
+                    $('#email').css("display", "none");
+                } else {
+                    email = false
+                    $('#email').removeClass('d-none');
+                    $('#email').html(' Enter Your Valid  email');
+                    $('#email').css("display", "block");
+
+                }
+            });
+
 
             $("[name=number]").keyup(function() {
                 var mobileNum = $(this).val();
-                // var phone_number = new Array()
-                // var phone_number = ["017", "018", "019", "016", "015", "013", "014"];
-                // var split_number = mobileNum.split('');
-                // var numbar_split = '';
-                // console.log(split_number);
                 if (mobileNum.length == 11) {
 
-                    // $('#submit_now').removeAttr('disabled', 'disabled');
                     $('.screennumberError').addClass('d-none');
                     let name = true;
                 } else {
-                    // $('#submit_now').attr('disabled', 'disabled');
                     $('.screennumberError').removeClass('d-none');
                     $('.screennumberError').html('Enter Your Phone Number');
                     let name = false;
 
 
                 }
-                //$array_mobile = str_split($mobileNum, 3)
-
-
-
             });
-
         });
 
         function progress1(input) {
             var i = 0;
             var name1 = input.files[0].name;
             var file_size = input.files[0].size;
-            console.log(file_name) // With extension
-            // console.log(input.files[0].name.replace(/\.[^/.]+$/, '')) // Without extension
             if (i == 0) {
                 i = 1;
-                // var elem = document.getElementById("myBar1");
-                //var number = document.getElementById("progss1");
                 var file_name = document.getElementById("file_name1");
                 var width = 1;
                 var id = setInterval(frame, 0);
@@ -619,12 +522,9 @@
                         i = 1;
                     } else {
                         width++;
-                        //elem.style.width = width + "%";
-                        //number.innerHTML = width + "%";
                         var str1 = name1;
                         if (str1.length > 20) str1 = str1.substring(0, 10);
                         file_name.innerHTML = str1 + "...";
-                        //file_name.innerHTML = name1;
 
                     }
                 }
@@ -635,12 +535,8 @@
             var i = 0;
             var name = input.files[0].name;
             var file_size = input.files[0].size;
-            console.log(file_size) // With extension
-            // console.log(input.files[0].name.replace(/\.[^/.]+$/, '')) // Without extension
             if (i == 0) {
                 i = 1;
-                //var elem = document.getElementById("myBar");
-                //var number = document.getElementById("progss");
                 var file_name = document.getElementById("file_name");
                 var width = 1;
                 var id = setInterval(frame, 0);
@@ -651,8 +547,6 @@
                         i = 1;
                     } else {
                         width++;
-                        //elem.style.width = width + "%";
-                        //number.innerHTML = width + "%";
                         var str = name;
                         if (str.length > 10) str = str.substring(0, 10);
                         file_name.innerHTML = str + "...";

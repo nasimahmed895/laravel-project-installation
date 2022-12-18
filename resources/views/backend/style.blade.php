@@ -6,11 +6,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="./assets/img/favicon.png">
-    <title>
-        Root Admin
-    </title>
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('public/uploads/images/' . get_option('icon')) }}">
+    <link rel="icon" type="image/png" href="{{ asset('public/uploads/images/' . get_option('icon')) }}">
+    <title>{{ get_option('company_name') . get_option('site_title') }}</title>
     <!--     Fonts and icons     -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link rel="stylesheet" href="{{ asset('/public/frontend/style/loder.css') }}">
@@ -19,7 +17,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
-    <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet">
     {{--  <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet">  --}}
     {{--  yajra datatable  --}}
 
