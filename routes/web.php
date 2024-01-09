@@ -3,6 +3,7 @@
 use App\Models\Setting;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\backend\PageController;
 use App\Http\Controllers\frontend\WebController;
@@ -14,7 +15,6 @@ use App\Http\Controllers\backend\Contact\Contactcontroller;
 use App\Http\Controllers\backend\job\JobePositionController;
 use App\Http\Controllers\backend\home\ClientReviewControlller;
 use App\Http\Controllers\frontend\SocialShareButtonsController;
-use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,23 +27,25 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', [WebController::class, 'index'])->name('index');
-Route::get('/about', [WebController::class, 'about'])->name('about');
-Route::get('/case-study', [WebController::class, 'case_study'])->name('case_study');
-Route::get('/case-study-view', [WebController::class, 'case_study_view'])->name('case_study_view');
-Route::get('/how-we-work', [WebController::class, 'how_we_work'])->name('how_we_work');
-Route::get('/project-base-solution', [WebController::class, 'project_base'])->name('project_base');
-Route::get('/dedicated-team', [WebController::class, 'dedicated_team'])->name('dedicated_team');
-Route::get('/contact', [WebController::class, 'contact'])->name('contact_us');
-Route::post('contact-stor', [WebController::class, 'contact_stor'])->name('contact_stor');
-Route::get('/career', [WebController::class, 'career'])->name('career');
-Route::get('/basicInformation/{id}', [WebController::class, 'basicInformation'])->name('basicInformation');
-Route::post('/apply-now', [WebController::class, 'apply_now'])->name('apply_now');
-Route::get('/job-details/{id}', [WebController::class, 'job_details'])->name('job_details');
-Route::get('/fileup', [WebController::class, 'fileup']);
-Route::post('/upload-doc-file', [WebController::class, 'uploadToServer'])->name('file.store');
-
 Route::middleware(['install'])->group(function () {
+
+
+    Route::get('/', [WebController::class, 'index'])->name('index');
+    Route::get('/about', [WebController::class, 'about'])->name('about');
+    Route::get('/case-study', [WebController::class, 'case_study'])->name('case_study');
+    Route::get('/case-study-view', [WebController::class, 'case_study_view'])->name('case_study_view');
+    Route::get('/how-we-work', [WebController::class, 'how_we_work'])->name('how_we_work');
+    Route::get('/project-base-solution', [WebController::class, 'project_base'])->name('project_base');
+    Route::get('/dedicated-team', [WebController::class, 'dedicated_team'])->name('dedicated_team');
+    Route::get('/contact', [WebController::class, 'contact'])->name('contact_us');
+    Route::post('contact-stor', [WebController::class, 'contact_stor'])->name('contact_stor');
+    Route::get('/career', [WebController::class, 'career'])->name('career');
+    Route::get('/basicInformation/{id}', [WebController::class, 'basicInformation'])->name('basicInformation');
+    Route::post('/apply-now', [WebController::class, 'apply_now'])->name('apply_now');
+    Route::get('/job-details/{id}', [WebController::class, 'job_details'])->name('job_details');
+    Route::get('/fileup', [WebController::class, 'fileup']);
+    Route::post('/upload-doc-file', [WebController::class, 'uploadToServer'])->name('file.store');
+
 
     Auth::routes(['register' => false]);
 
