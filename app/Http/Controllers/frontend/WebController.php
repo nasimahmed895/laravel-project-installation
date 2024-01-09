@@ -21,13 +21,8 @@ class WebController extends Controller
 {
     public function index()
     {
-        $featured = Cache::rememberForever('featured', function () {
-            return Featured::all();
-        });
-        $client = Cache::rememberForever('client', function () {
-            return   Client::all();
-        });
-        return view('frontend.pages.index', compact('featured', 'client'));
+
+        return view('frontend.pages.index');
     }
 
     public function about()

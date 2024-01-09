@@ -6,8 +6,8 @@ use Hash;
 use Artisan;
 use Redirect;
 use Validator;
-use Illuminate\Http\Request;
 use App\Utilities\Installer;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class InstallController extends Controller
@@ -88,6 +88,6 @@ class InstallController extends Controller
         Installer::finalTouches();
         Artisan::call('config:clear');
         Artisan::call('cache:clear');
-        return redirect('general_settings');
+        return redirect('root/general_settings');
     }
 }

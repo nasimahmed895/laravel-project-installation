@@ -46,36 +46,13 @@
                 <li class="nav-item ">
                     <div class="dropdown ">
                         <a class="  dropdown-toggle nav-link-text ms-1" type="button" id="dropdownMenuButton1"
-                            aria-expanded="false" href="{{ route('home') }}">
+                            aria-expanded="false" href="{{ route('client-review.index') }}">
                             <i class="ni ni-credit-card text-success text-sm opacity-10 far fa-address-card"></i>
                             <span class="nav-link-text ms-3">Home</span>
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="{{ route('client-review.index') }}">Clients</a></li>
-                        </ul>
-                    </div>
-                </li>
-
-                <li class="nav-item mt-3">
-                    <div class="dropdown ">
-                        <a class="  dropdown-toggle nav-link-text ms-1" type="button" id="dropdownMenuButton1"
-                            aria-expanded="false" href="{{ route('job-post.index') }}">
-                            <i class="ni ni-app text-info text-sm opacity-10 fas fa-briefcase"></i>
-                            <span class="nav-link-text ms-3">CAREER</span>
-                        </a>
 
                     </div>
                 </li>
-                <li class="nav-item mt-3">
-                    <div class="dropdown ">
-                        <a class="  dropdown-toggle nav-link-text ms-1" type="button" id="dropdownMenuButton1"
-                            aria-expanded="false" href="{{ route('contact-us.index') }}">
-                            <i class="ni ni-world-2 text-danger text-sm opacity-10 fas fa-id-card-alt"></i>
-                            <span class="nav-link-text ms-3">Contact Us</span>
-                        </a>
-                    </div>
-                </li>
-
 
 
                 <li class="nav-item mt-3">

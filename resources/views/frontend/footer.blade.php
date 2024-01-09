@@ -1,18 +1,4 @@
 <footer>
-    <div class="">
-        <section class="book_meeting_banner "
-            style="background-image: url({{ asset('/public/frontend/Icon_Images/contact-header.jpg') }});">
-            <div class="bg-color ">
-                <div class="book_meeting">
-                    <span>Book a Meeting With Us, and Let's Discuss</span>
-                    <a href="{{ route('contact_us') }}">
-                        <img src="{{ asset('/public/frontend/Icon_Images/Contact.png') }}" alt="">
-                    </a>
-
-                </div>
-            </div>
-        </section>
-    </div>
     <div class="contant ">
 
         <div class="container">
@@ -31,13 +17,17 @@
                     </div>
                     <div class="office_time mt-4">
                         <ul class="p-0">
-                            @foreach (json_decode(get_option('phone')) as $phones)
-                                <li><a class="text-white" href="tel: {{ $phones->phone }}">
-                                        <img style="width: 25px ; margin-right: 5px; margin-left: 0"
-                                            src="{{ asset('public/' . $phones->image) }}" alt="" sizes=""
-                                            srcset=""> 01794-780707
-                                    </a></li>
-                            @endforeach
+                            @if (json_decode(get_option('phone') != null))
+                                @foreach (json_decode(get_option('phone')) as $phones)
+                                    <li><a class="text-white" href="tel: {{ $phones->phone }}">
+                                            <img style="width: 25px ; margin-right: 5px; margin-left: 0"
+                                                src="{{ asset('public/' . $phones->image) }}" alt=""
+                                                sizes="" srcset=""> 01794-780707
+                                        </a></li>
+                                @endforeach
+                            @endif
+
+
                         </ul>
                     </div>
 
