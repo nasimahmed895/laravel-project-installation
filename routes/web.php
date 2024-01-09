@@ -64,12 +64,8 @@ Route::middleware(['install'])->group(function () {
 
     Route::middleware(['auth', 'active'])->group(function () {
         Route::group(['prefix' => 'root'], function () {
-            Route::get('home', [PageController::class, 'home'])->name('home');
-
+            Route::resource('admin', AdminController::class);
             Route::resource('client-review', ClientReviewControlller::class);
-
-
-            Route::get('/download/{image}', [Contactcontroller::class, 'download']);
             Route::any('general_settings', [SettingController::class, 'general'])->name('general_settings');
             Route::post('general_settings', [SettingController::class, 'store_settings'])->name('general_settings');
             Route::post('general_settings_phone', [SettingController::class, 'general_settings_phone'])->name('general_settings_phone');
