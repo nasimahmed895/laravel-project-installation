@@ -67,14 +67,9 @@ Route::middleware(['install'])->group(function () {
             Route::get('home', [PageController::class, 'home'])->name('home');
 
             Route::resource('client-review', ClientReviewControlller::class);
-            Route::resource('featured', FeaturedController::class);
-            Route::resource('admin', AdminController::class);
-            Route::resource('contact-us', Contactcontroller::class);
+
+
             Route::get('/download/{image}', [Contactcontroller::class, 'download']);
-            Route::get('/chack', [Contactcontroller::class, 'chack']);
-
-            Route::resource('job-post', JobePositionController::class);
-
             Route::any('general_settings', [SettingController::class, 'general'])->name('general_settings');
             Route::post('general_settings', [SettingController::class, 'store_settings'])->name('general_settings');
             Route::post('general_settings_phone', [SettingController::class, 'general_settings_phone'])->name('general_settings_phone');
